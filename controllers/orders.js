@@ -19,7 +19,7 @@ const postOrderHandler = (req, res, db) => {
         city: city.value,
         street: street.value,
         email: email.value, //TODO try exchange email with req.userData.email
-        delivery-method: deliveryMethod.value,
+        deliverymethod: deliveryMethod.value,
         time: new Date()
     })
         .then(response => res.json(response))
