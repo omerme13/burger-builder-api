@@ -14,20 +14,22 @@ const verifyToken = require('./middleware/verifyToken').verifyToken;
 
 // linux: user = omer, password = 1234
 // windows: user = postgres, password = '' 
-let user = 'omer';
-let password = '1234';
-if (process.platform === 'win32') {
-    user = 'postgres';
-    password = '';  
-}    
+// let user = 'omer';
+// let password = '1234';
+// if (process.platform === 'win32') {
+//     user = 'postgres';
+//     password = '';  
+// }    
 
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: user,
-        password: password,
-        database: 'burgerbuilder'
+        // host: '127.0.0.1',
+        // user: user,
+        // password: password,
+        // database: 'burgerbuilder'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 
