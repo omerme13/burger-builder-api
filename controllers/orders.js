@@ -14,11 +14,10 @@ const postOrderHandler = (req, res, db) => {
         // the reason for calculating prices here is to prevent manipulating data by the user.
         price: prices.default + prices.salad*salad + prices.bacon*bacon
             + prices.cheese*cheese + prices.meat*meat,
-        // TODO userId: userId .and then connect user table with orders table instead of creating many columns in orders table
         name: name.value,
         city: city.value,
         street: street.value,
-        email: email.value, //TODO try exchange email with req.userData.email
+        email: email.value,
         deliverymethod: deliveryMethod.value,
         time: new Date()
     })

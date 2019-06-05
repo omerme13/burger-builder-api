@@ -7,7 +7,6 @@ const signinHandler = (req, res, db, bcrypt, jwt) => {
         const isValid = bcrypt.compareSync(password, data[0].hash);
         const expirationTime = 3600;
         
-        //*TODO insert into users table the right id from login table             
         if (isValid) {
             const token = jwt.sign(
                 {email: data[0].email, id: data[0].id}, 
